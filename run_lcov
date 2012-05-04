@@ -1,0 +1,14 @@
+#!/bin/bash
+# $Id$
+# make coverage
+# sh test.input
+if [[ ! -d /srv/http/bediger/tree_match0 ]]
+then
+    echo No destination directory /srv/http/bediger/tree_match0
+    exit 1
+fi
+cd /srv/http/bediger/tree_match0
+rm -f app.info
+lcov --directory /home/bediger/src/csrc/tree_match0 --capture --output-file app.info
+genhtml -o lcov app.info
+

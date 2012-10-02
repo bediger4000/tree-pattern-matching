@@ -1,4 +1,4 @@
-# $Id$
+# $Id: makefile,v 1.1.1.1 2012/05/04 23:44:35 bediger Exp $
 CC = cc
 CFLAGS = -I. -g -Wall
 
@@ -6,6 +6,9 @@ CFLAGS = -I. -g -Wall
 #CFLAGS = -I. -g -Wall -fprofile-arcs -ftest-coverage
 
 OBJS = tree.o buffer.o cb.o aho_corasick.o algorithm_d.o
+
+node_counter: node_counter.o tree.o
+	$(CC) $(CFLAGS) -o node_counter node_counter.o tree.o
 
 test6: main.o $(OBJS)
 	$(CC) $(CFLAGS) -o test6 main.o $(OBJS)

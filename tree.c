@@ -1,4 +1,4 @@
-/* $Id$ */
+/* $Id: tree.c,v 1.1.1.1 2012/05/04 23:44:35 bediger Exp $ */
 /*
  * Parse a fully-parenthesized, lisp-like representation of binary trees
  * into a malloc-allocated C struct tree.
@@ -92,7 +92,10 @@ read_tree(char **str)
 			case UNSET:  /* hits this first time through */
 				r->type = LEAF;
 			case LEAF:   /* hits this every other time through */
-				r->label[r->labelsz++] = *(*str)++;
+				r->label[r->labelsz++] = **str;
+				if (**str == '\0')
+					looping = 0;
+				(*str)++;
 				break;
 
 			case INTERIOR:
@@ -159,6 +162,8 @@ free_tree(struct tree *node)
 {
 	if (node->left) free_tree(node->left);
 	if (node->right) free_tree(node->right);
+	node->left = node->right = NULL;
+	node->label[0] = '\0';
 	free(node);
 }
 

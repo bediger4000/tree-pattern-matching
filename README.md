@@ -19,12 +19,12 @@ lists.  Must be fully parenthesized.
     (one (two three))
     ((one two) (three four))
 
-Pattern lists can contain '*' characters which represent "match anything",
-globbing-style wildcards.  A '*' matches any subtree, or any leaf.
 
 ###Patterns
 
-Patterns match leaf node labels, and include '*' wildcards:
+Pattern lists can contain '\*' characters which represent "match anything",
+globbing-style wildcards.  A '\*' matches any subtree, or any leaf. Any other
+character or string (besides parentheses and whitespace) matches a node name only.
 
 	$ ./test6 -p '(a *)' -s '((a b) (a c))'
     
@@ -33,6 +33,10 @@ Patterns match leaf node labels, and include '*' wildcards:
     
     Match pattern with subtree:
     (a c)
+
+	$ ./test6 -p '(b *)' -s '((a b) (a c))'
+    
+    $
 
 ##BUILDING
 

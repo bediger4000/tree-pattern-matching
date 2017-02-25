@@ -19,6 +19,17 @@ lists.  Must be fully parenthesized.
     (one (two three))
     ((one two) (three four))
 
+Internally, the algorithm uses conventional binary trees:
+
+	struct tree {
+		enum node_type type;
+		char   label[64];
+		int    labelsz;
+		int tree_size;
+		struct tree *left;
+		struct tree *right;
+	};
+
 
 ###Patterns
 

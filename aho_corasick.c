@@ -96,7 +96,7 @@ void
 set_output(struct gto *p, int state, char *keyword)
 {
 	size_t kwl = strlen(keyword);
-	int i;
+	unsigned int i;
 	int node_count = 0;
 
 	/* Slightly weird: count the number of nodes in

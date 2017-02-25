@@ -34,3 +34,4 @@ algorithm_d.o: algorithm_d.c tree.h algorithm_d.h aho_corasick.h
 clean:
 	-rm -rf *.a *.o *core test?
 	-rm -rf *.gcno *.gcda
+	-rm -rf node_counter

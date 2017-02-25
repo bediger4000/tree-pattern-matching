@@ -1,6 +1,6 @@
 # $Id: makefile,v 1.1.1.1 2012/05/04 23:44:35 bediger Exp $
 CC = cc
-CFLAGS = -I. -g -Wall
+CFLAGS = -I. -g -Wall -Wextra
 
 # For gcov coverage testing:
 #CFLAGS = -I. -g -Wall -fprofile-arcs -ftest-coverage

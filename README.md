@@ -1,4 +1,4 @@
-#Matching Patterns of binary trees
+# Matching Patterns of binary trees
 
 An implementation of:
 Hoffman, C. and O'Donnel, J., "Pattern matching in trees", JACM, 29(1), 68–95, 1982.
@@ -10,7 +10,7 @@ Communications of the ACM 18 (6): 333–340.
 
 Implemented in ANSI C89, I believe.
 
-##TEST INPUT
+## TEST INPUT
 
 Test program input trees are represented textually as lisp-style 2-element
 lists.  Must be fully parenthesized.
@@ -31,7 +31,7 @@ Internally, the algorithm uses conventional binary trees:
 	};
 
 
-###Patterns
+### Patterns
 
 Pattern lists can contain '\*' characters which represent "match anything",
 globbing-style wildcards.  A '\*' matches any subtree, or any leaf. Any other
@@ -49,7 +49,7 @@ character or string (besides parentheses and whitespace) matches a node name onl
     
     $
 
-##BUILDING
+## BUILDING
 
     make test6
     sh ./test.input

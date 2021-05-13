@@ -29,7 +29,7 @@ The tree s could also be considered as a subtree of itself.
 The "[Hard]" rating is possibly an understatement.
 There are other tree-matching algorithms,
 but they're all much more complicated,
-or they're dead slow (O(mn)) or they only work on p;roper subtrees.
+or they're dead slow (O(mn)) or they only work on proper subtrees.
 This is also not a well-known algorithm.
 
 This problem is unsuited for whiteboarding.

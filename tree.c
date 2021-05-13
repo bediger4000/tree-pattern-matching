@@ -91,6 +91,7 @@ read_tree(char **str)
 			 */
 			case UNSET:  /* hits this first time through */
 				r->type = LEAF;
+				/* It's supposed to fall through to case LEAF */
 			case LEAF:   /* hits this every other time through */
 				r->label[r->labelsz++] = **str;
 				if (**str == '\0')
